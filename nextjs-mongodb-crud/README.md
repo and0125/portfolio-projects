@@ -98,9 +98,48 @@ This endpoint ensures the `PUT` method works for updating entries.
 
 this is another get command, we put this in the same `route.js` file as the update method. 
 
----
+## Replacing Hard Coding with API data
 
-# Adding Additional Data
 
-he used the post command to add more topics to the database. 
+We want to populate the topics list with a list of the topics from the API. to do this we create a new function in TopicsList file.
 
+```javascript
+export const getTopics = async () => {
+    try {
+       const response = await fetch("https://localhost:3000/api/topics", {
+          cache: 'no-store'
+        })
+
+      if (!response.ok) {
+        throw new Error("failed to fetch topics")
+      }
+
+      return response.json()
+    } catch (error) {
+        console.log("Error loading topics: ", error);
+    }
+  }
+```
+
+note that Nextjs caches responses by default, so this no-store option makes sure the request goes to the backend every time.
+
+**Personalization**: I moved this function out of the TopicsList component into a file called `lib/apiHandlers` which I think is what I'd prefer in a larger project to keep the code isolated. 
+
+When this is used to gather the data, the component *itself* also must become an async component, so we update the `TopicsList` to have this keyword:
+
+```javascript
+async function TopicsList() {
+  const {topics} = await getTopics();
+```
+
+Then we can map through all the Topics. 
+
+**TROUBLESHOOTING**: make sure to use `http` instead of `https` when you are fetching data through the API; this is very important for connecting and gathering data that's not behind an SSL certificate. 
+
+we updated the edit link as well to pull from the MongoDB id: `<Link href={`/edit-topic/${topic._id}`}>`. This ensures we get the id as a url parameter for the edit topic screen. 
+
+## Adding Topics with API
+
+This needs to be a client component to interact with the data passed in; so we add the `use client` flag at the top. Because all components are server components by default, a component would not naturally have access to the data provided from the client machine. 
+
+We want to get the client's data that's added to the input fields, and save them as state, then pass them to the API endpoint to save the data.
