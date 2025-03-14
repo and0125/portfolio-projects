@@ -116,8 +116,6 @@ this access token would contain:
   - this is not recommended for most applications
   - didn't go through with this.
 
-
-
 ## Summary
 
 Best flow depends on application. Oauth 2.0 is the default standard for authorization.
