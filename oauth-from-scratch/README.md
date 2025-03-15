@@ -214,4 +214,4 @@ _NOTE_: I changed this to sessionToken in this codebase for additional clarity.
 
 The cookies.set command enables you to adjust the cookies; there are some standard options, and you can adjust other cookie properties as well.
 
-*NOTE*: had to adjust the session
+*NOTE*: had to add a session secret to the .env file for this to work; Claude will generate one. 
