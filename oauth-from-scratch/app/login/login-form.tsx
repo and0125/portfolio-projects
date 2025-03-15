@@ -8,10 +8,6 @@ function LoginForm() {
   return (
     <form action={loginAction}>
       <div>
-        <input id="name" name="name" placeholder="Name" />
-      </div>
-
-      <div>
         <input id="email" name="email" placeholder="Email" />
       </div>
       {state?.errors?.email && (
