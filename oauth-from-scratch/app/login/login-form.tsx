@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 
 function LoginForm() {
+  const [state, loginAction] = useActionState(login, undefined);
+
   return (
     <form>
       <div>
@@ -26,3 +28,12 @@ function LoginForm() {
 }
 
 export default LoginForm;
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button disabled={pending} type="submit">
+      Login
+    </button>
+  );
+}

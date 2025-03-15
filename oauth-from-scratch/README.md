@@ -185,3 +185,19 @@ _NOTE_: he also already set up the `form-schema-and-actions.ts` file that I put 
 The zod package is for form validation messages to prevent malformed data to be sent to the server.
 
 The actions file also has functions for changing the login and logout state from the values in the form.
+
+we add the actions to the loginform:
+
+```javascript
+const [state, loginAction] = useActionState(login, undefined);
+```
+
+this uses the login function from the other file, and the initial state of the state variable.
+
+This useActionState gives you the Action property to put on a form (the form handler), and a state variable.
+
+We use the action property instead of `onSubmit`, so `<form action={loginAction}>`.
+
+The submitButton is written as a separate component so that we can use the `useFormStatus()` hook on this submission so that the button displays as disabled until its fully functional.
+
+once that is setup we can implement the actions 
