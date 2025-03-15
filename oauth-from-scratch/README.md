@@ -171,3 +171,17 @@ github repository: <https://github.com/cosdensolutions/code/blob/master/videos/l
   - grabbed createSession from github repo
   - grabbed deleteSession from github repo
 - installed the package `jose` as well
+
+### useActionState for sending Credentials
+
+Adding functionality to send email and password to email for validation.
+
+We use a useActionState object which is imported from React.
+
+This is a two part hook.
+
+_NOTE_: he also already set up the `form-schema-and-actions.ts` file that I put in the `lib` folder. Also, this file required `zod` so I installed this as well.
+
+The zod package is for form validation messages to prevent malformed data to be sent to the server.
+
+The actions file also has functions for changing the login and logout state from the values in the form.
