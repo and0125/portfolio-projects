@@ -1,3 +1,5 @@
+"use client";
+
 import LoginForm from "./login-form";
 
 import React from "react";

@@ -200,4 +200,18 @@ We use the action property instead of `onSubmit`, so `<form action={loginAction}
 
 The submitButton is written as a separate component so that we can use the `useFormStatus()` hook on this submission so that the button displays as disabled until its fully functional.
 
-once that is setup we can implement the actions 
+once that is setup we can implement the login action as a function.
+
+We use `loginSchema.safeParse(Object.fromEntries(formData));` as a way to check the validation of the form entries. And then provide boolean logic on whether or not the validation was successful. If unsuccessful we return all the errors.
+
+Then if you return to the loginForm, the typescript use will recognize the type available for the state property to display errors in the form.
+
+Then you can assume the result is valid, and then send the data to the server.
+
+Once the user is validated, then you can create a session, using the `createSession` function in `lib/session.ts`. This function creates an expiration token, and encrypts a token with the userID and expiresAt time, and this will provide a session token called `session` in the tutorial.
+
+_NOTE_: I changed this to sessionToken in this codebase for additional clarity.
+
+The cookies.set command enables you to adjust the cookies; there are some standard options, and you can adjust other cookie properties as well.
+
+*NOTE*: had to adjust the session
