@@ -170,3 +170,4 @@ github repository: <https://github.com/cosdensolutions/code/blob/master/videos/l
   - decrypt function
   - grabbed createSession from github repo
   - grabbed deleteSession from github repo
+- installed the package `jose` as well
