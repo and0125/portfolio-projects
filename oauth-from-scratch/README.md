@@ -214,4 +214,10 @@ _NOTE_: I changed this to sessionToken in this codebase for additional clarity.
 
 The cookies.set command enables you to adjust the cookies; there are some standard options, and you can adjust other cookie properties as well.
 
-*NOTE*: had to add a session secret to the .env file for this to work; Claude will generate one. 
+_NOTE_: had to add a session secret to the .env file for this to work; Claude will generate one.
+
+### Creating Middleware
+
+we create a middleware file and a function to handle the middleware that checks for the correct sessionToken, for protected routes.
+
+this middleware file should be in the `app` directory at the root level, not within a folder.
