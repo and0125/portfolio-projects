@@ -119,3 +119,54 @@ this access token would contain:
 ## Summary
 
 Best flow depends on application. Oauth 2.0 is the default standard for authorization.
+
+---
+
+# Authentication Flow in Nextjs
+
+video: <https://www.youtube.com/watch?v=Otq0LY90Qso>
+
+walk through complete authentication flow without a library; rolling own auth. Whether to do this in production is up to us; but this is a good way to see the mental model for Oauth.
+
+Using all best practices, and design patterns to properly handle authentication.
+
+## Visual Example and Steps of Authentication
+
+Using eraser for whiteboarding.
+
+to implement auth you need a client and server, and these have different responsibilities.
+
+Client is anything that is user facing or living on the browser; what the user interacts with. A user will see a form to enter their credentials in. So we'd need to create a login form. This login form would have an email and password, and would be sent to the server which sends the email/password directly to the server, and the server will handle the validation.
+
+The loginform will need a function to send data to the server; once of these is a server action. Server actions are the responsibility of the server to call with the email and password.
+
+The server, once it does the validation, it will communicate a response to the login form component, which will use a `useActionState`. This works with a server action and this will display so information back to the user. Then the user can take action to fix any errors. This will give some state variables like loading and errors, which will be returned to the login form to be displayed to the user.
+
+THe server receives credentials, then the server will validate the data, which will have two outcomes; either an error or a success.
+
+if an error, that error will be directly returned to the login form, which will be received as the state variable.
+
+If everything is validated, this will create a JWT token to be stored in a cookie safely to ensure the user is validated and has access to the application.
+
+The JWT token is then going to get stored in something that is called an `HTTP-only secure cookie`, which means that this cookie cannot be read by javascript on the client; it can only be read by the server.
+
+The last piece we need is to be able to determine if the user can access specific routes. And this happens through a middleware, which is determined by the secure cookie. The middleware checks the cookie, which determines what the user is allowed to see or not.
+
+So we have a client and server.
+
+## Implementation
+
+github repository: <https://github.com/cosdensolutions/code/blob/master/videos/long/auth-flow-next-js/src/app/lib/session.ts>
+
+### Starting setup
+
+- login/login-form.tsx: basic form w/ submit button and input fields
+- login/page.tsx: basic page with just loginform component
+- dashboard/page.tsx: a page with plain text
+- lib/session.ts: has the following:
+  - SessionPayload Type
+  - SecretKey and encodedKey instantiation
+  - encrypt function
+  - decrypt function
+  - grabbed createSession from github repo
+  - grabbed deleteSession from github repo
