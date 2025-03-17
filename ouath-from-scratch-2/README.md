@@ -90,3 +90,77 @@ This means that the JWT token is best for when you have a **multi-server applica
 # Code base
 
 Starts with a sign in and sign up page, with buttons. I implemented this from the [git repo](https://github.com/WebDevSimplified/custom-nextjs-authentication/blob/main/src/app/page.tsx).
+
+created the main page to reflect the starting point code; without some of the later functions setup:
+
+```javascript
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
+
+export default async function HomePage() {
+  const fullUser = null;
+
+  return (
+    <div className="container mx-auto p-4">
+      {fullUser == null ? (
+        <div className="flex gap-4">
+          <Button asChild>
+            <Link href="/sign-in">Sign In</Link>
+          </Button>
+          <Button asChild>
+            <Link href="/sign-up">Sign Up</Link>
+          </Button>
+        </div>
+      ) : (
+        <Card className="max-w-[500px] mt-4">
+          <CardHeader>
+            <CardTitle>User: {fullUser.name}</CardTitle>
+            <CardDescription>Role: {fullUser.role}</CardDescription>
+          </CardHeader>
+          <CardFooter className="flex gap-4">
+            <Button asChild variant="outline">
+              <Link href="/private">Private Page</Link>
+            </Button>
+            {fullUser.role === "admin" && (
+              <Button asChild variant="outline">
+                <Link href="/admin">Admin Page</Link>
+              </Button>
+            )}
+            <LogOutButton />
+          </CardFooter>
+        </Card>
+      )}
+    </div>
+  );
+}
+```
+
+Simple Sign in form / Sign Up form:
+
+```javascript
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+function SignIn() {
+  return (
+    <div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Sign In</CardTitle>
+        </CardHeader>
+        <CardContent>Sign In Form Placeholder</CardContent>
+      </Card>
+    </div>
+  );
+}
+
+export default SignIn;
+```
+
