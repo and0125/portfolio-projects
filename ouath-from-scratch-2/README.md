@@ -89,6 +89,19 @@ This means that the JWT token is best for when you have a **multi-server applica
 
 # Code base
 
+## Needed Installs
+
+- shadcn
+  - card
+  - button
+  - form
+  - input
+- react-hook-form (comes with `shadcn add form`)
+- zod (comes with `shadcn add form`)
+-
+
+## Starting Points
+
 Starts with a sign in and sign up page, with buttons. I implemented this from the [git repo](https://github.com/WebDevSimplified/custom-nextjs-authentication/blob/main/src/app/page.tsx).
 
 created the main page to reflect the starting point code; without some of the later functions setup:
@@ -164,3 +177,16 @@ function SignIn() {
 export default SignIn;
 ```
 
+## Auth folder
+
+we start with an `auth` folder in the root project directory with a `core` and `nextjs` subfolders. This is where most of the coding will happen.
+
+the core folder started empty
+
+but there's a nextjs folder that has a subfolder for components like:
+
+- logout button
+- sign in form
+- sign up form
+
+and also has an `actions.ts` and `schemas.ts` file.
