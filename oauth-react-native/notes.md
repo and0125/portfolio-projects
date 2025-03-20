@@ -13,7 +13,7 @@ Implementing authentication and authorization in a react native application foll
   - react-native-keyobard-aware-scroll-view: helps with forms that need to scroll when the keyboard appears.
   - react-native-paper: optional UI library for building forms and buttons
 
-```markdown
+```text
 # Install required packages
 
 npm install @react-native-async-storage/async-storage expo-secure-store react-native-keyboard-aware-scroll-view
@@ -30,3 +30,54 @@ npx expo install react-native-screens react-native-safe-area-context
 
 npm install react-native-paper
 ```
+
+## Transition to Tabs structure
+
+This tabs structure uses the Expo Router, which is expo's file based routing solution that supports tab navigation.
+
+### Install Dependencies
+
+```text
+Install Expo Router Dependencies
+
+# Install Expo Router
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+
+# Add expo-router dev dependency
+npm install -D @types/react-native
+```
+
+### File Setup
+
+- remove `App.js`
+- add `app/` dir
+- add the following files:
+  - app/\_layout.js - root layout with AuthProvider
+  - app/index.js - entry point that redirects based on auth state
+  - app/login - login screen
+  - app/register - registration screen
+  - app/(protected)/\_layout.js - layout for protected tabs
+  - app/(protected)/index - home tab
+  - app/(protected)/profile - profile tab
+  - app/(protected)/settings - settings tab
+
+Also we change the index.js file to:
+
+```javascript
+import "expo-router/entry";
+```
+
+## Create Authentication Context
+
+This file is a crucial part of this system. It creates a react context that will be accessible throughout the app, managing and providing authentication related functionality.
+
+This features:
+
+- state management for tracking the users' token, user data, and loading status
+- secure storage: uses expo-secure-store for storing sensitive auth tokens securely and async storage for non-sensitive user data
+- core authentication functions:
+  - signin: stores token and user data, updates auth state
+  - signout: remove stored data and updates auth state
+  - register: example function for user registration
+- a custom hook that provides the `useAuth()` hook as a way to easily access auth functions and state anywhere in the app.
+- auto-loading: automatically checks for existing auth tokens when the app loads.
