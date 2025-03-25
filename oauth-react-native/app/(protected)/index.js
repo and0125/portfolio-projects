@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { useAuth } from "../../src/context/AuthContext";
+import { useAuth } from "../../context/auth-context";
 
 export default function HomeScreen() {
   const { authState } = useAuth();

@@ -2,6 +2,14 @@
 
 Implementing authentication and authorization in a react native application following a Claude Tutorial.
 
+## TLDR
+
+This set of notes goes through the process of:
+
+- starting the project
+- setting up the tab layout
+- creating the AuthContext
+
 ## Setup
 
 - `npx create-expo-app@latest ./ --template blank`
@@ -78,3 +86,13 @@ This features:
   - register: example function for user registration
 - a custom hook that provides the `useAuth()` hook as a way to easily access auth functions and state anywhere in the app.
 - auto-loading: automatically checks for existing auth tokens when the app loads.
+
+## Registration screen
+
+This screen is the last screen for the basic authentication flow. This screen has features to:
+
+- collect user information
+- validate the input
+- placeholders for the authentication from the `AuthContext` object
+- Navgiation for going to the login screen, and redirection to the home screen if already authenticated; navigates to home screen after a successful registration
+- uses a keyboardawarescrollview to handle the keyboard appearance; provides clear error messages, and shows a loading indicator.

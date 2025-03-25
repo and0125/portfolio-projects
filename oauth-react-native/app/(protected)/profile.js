@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 import { Text, Card, Title, Paragraph, Button } from "react-native-paper";
-import { useAuth } from "../../src/context/AuthContext";
+import { useAuth } from "../../context/auth-context";
 
 export default function ProfileScreen() {
   const { authState } = useAuth();

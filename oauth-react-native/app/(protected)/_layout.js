@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Tabs } from "expo-router";
-import { useAuth } from "../../src/context/AuthContext";
+import { useAuth } from "../../context/auth-context";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 

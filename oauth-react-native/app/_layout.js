@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack } from "expo-router";
-import { AuthProvider } from "../src/context/AuthContext";
+import { AuthProvider } from "../context/auth-context";
 import { PaperProvider } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 

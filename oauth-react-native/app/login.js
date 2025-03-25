@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { TextInput, Button, Title, Text } from "react-native-paper";
 import { router } from "expo-router";
-import { useAuth } from "../src/context/AuthContext";
+import { useAuth } from "../context/auth-context";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function LoginScreen() {

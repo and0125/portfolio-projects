@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, ScrollView, Alert } from "react-native";
 import { List, Divider, Switch, Button, Text } from "react-native-paper";
-import { useAuth } from "../../src/context/AuthContext";
+import { useAuth } from "../../context/auth-context";
 import { router } from "expo-router";
 
 export default function SettingsScreen() {
