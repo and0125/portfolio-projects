@@ -9,6 +9,7 @@ This set of notes goes through the process of:
 - starting the project
 - setting up the tab layout
 - creating the AuthContext
+- setting up page components
 
 ## Setup
 
