@@ -49,7 +49,11 @@ async function handleImageUpload(request, response) {
       );
 
       // upload image as a stream to azure --> this is a helper function
-      const imageUrl = await UploadImageStream(filename, request); // uploading image as a stream of bits
+      const imageUrl = await UploadImageStream(
+        containerClient,
+        fileName,
+        request
+      ); // uploading image as a stream of bits
 
       // upload metadata to mongodb --> this is a helper function
       await StoreMetadata(fileName, caption, fileType, imageUrl);

@@ -2,7 +2,12 @@
   "dependencies": {
     "@azure/storage-blob": "^12.27.0",
     "dotenv": "^16.4.7",
-    "mongodb": "^6.15.0"
+    "mongodb": "^6.15.0",
+    "nodemon": "^3.1.9"
   },
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  }
 }

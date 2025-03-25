@@ -1,7 +1,8 @@
 export default async function ExtractMetadata(headers) {
   // uses headers to assign values to metadata, which gets stored in mongodb
-
+  console.log(headers);
   const contentType = headers["content-type"];
+
   const fileType = contentType.split("/")[1];
 
   // this I didn't quite understand what its for

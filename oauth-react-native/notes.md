@@ -37,15 +37,12 @@ This tabs structure uses the Expo Router, which is expo's file based routing sol
 
 ### Install Dependencies
 
-```text
 Install Expo Router Dependencies
 
-# Install Expo Router
-npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+- npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+  Add expo-router dev dependency
 
-# Add expo-router dev dependency
-npm install -D @types/react-native
-```
+- npm install -D @types/react-native
 
 ### File Setup
 
