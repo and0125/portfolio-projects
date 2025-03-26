@@ -27,6 +27,28 @@ Based on neo-brutalism being a relatively recent design trend (gaining prominenc
 
 These trends represent the evolving landscape of design across digital and physical mediums in recent years.
 
+## Other Widely Used Design Patterns
+
+Looking at the current design landscape, these are some of the most popular and widely adopted design trends:
+
+1. Minimalism - Still extremely prevalent across digital and physical design with its clean lines and focus on essential elements
+2. Responsive Design - Essential for websites and applications to function across different devices
+3. Dark Mode - Now standard in most major applications and operating systems
+4. Flat Design 2.0 - Evolution of flat design with subtle shadows and depth
+5. Microinteractions - Small animations that enhance user experience and engagement
+6. Material Design - Google's design system that remains influential across digital platforms
+7. User-Centered Design - Designing with strong focus on user needs and behaviors
+8. Mobile-First Design - Designing for mobile devices as the primary experience
+9. Personalization - Tailored user experiences based on individual preferences and behaviors
+10. Accessibility Design - Making products usable for people with diverse abilities
+11. Voice User Interface Design - For voice-controlled devices and applications
+12. Sustainable Design - Environmentally conscious approach gaining significant traction
+13. Glassmorphism - Popular in UI design for its depth and modern aesthetic
+14. Asymmetrical Layouts - Breaking grid systems for more dynamic compositions
+15. Data Visualization - Critical for presenting complex information clearly
+
+These trends dominate across industries from web and app design to architecture, fashion, and product design, reflecting both practical considerations (like accessibility and responsive design) and aesthetic preferences that resonate with contemporary audiences.
+
 ## AI Prompt
 
 `Please create a [style-name] style landing page with some core features. Please pick a color scheme that best highlights the design, and use the hexcodes in the tailwind css classes.`
