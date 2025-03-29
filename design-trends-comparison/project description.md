@@ -16,7 +16,7 @@ Based on neo-brutalism being a relatively recent design trend (gaining prominenc
 10. Retro Futurism - Combining vintage elements with futuristic aesthetics
 11. Anti-Design - Deliberately breaking conventional design rules for unique expressions
 12. Eco-Design - Sustainable, nature-inspired aesthetics with organic shapes and earthy tones
-13. Immersive 3D - Three-dimensional environments that create engaging spatial experiences
+~~13. Immersive 3D - Three-dimensional environments that create engaging spatial experiences~~
 14. Data Visualization Design - Creative ways to represent complex information visually
 15. Blended Photography - Merging photos with illustrations or digital elements
 16. Inclusive Design - Accessibility-focused approaches that work for diverse users
