@@ -3,9 +3,10 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header>
-      {/* logo */}
-      <div>
+    <header className="bg-gradient-to-r from-blue-300 to-purple-400 shadow-lg">
+      {/* container */}
+      <div className="max-w-6xl mx-auto flex justify-between items-center p-3">
+        {/* logo */}
         <Link href="/" className="text-2xl font-extrabold group cursor-pointer">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 drop-shadow-md group-hover:from-blue-400 group-hover:to-blue-600">
             Auth
@@ -14,6 +15,12 @@ export default function Header() {
             App
           </span>
         </Link>
+        {/* navigation menu */}
+        <nav className="flex gap-4">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/sign-in">Sign in</Link>
+        </nav>
       </div>
     </header>
   );

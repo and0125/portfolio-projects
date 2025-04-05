@@ -20,4 +20,4 @@ adding header to layout.js file; which will adjust the layout for every page we 
 
 added an about page too.
 
-created the logo with gradients.
+created the logo with gradients, and used a group to group the hover behavior of the two words in the logo
