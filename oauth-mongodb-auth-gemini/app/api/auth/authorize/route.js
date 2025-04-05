@@ -1,13 +1,13 @@
 // app/api/auth/authorize/route.js
 import { NextResponse } from "next/server";
-import { findUserById } from "@/lib/models/user"; // We might need this later for checking user session
+import { findUserById } from "@/lib/models/users"; // We might need this later for checking user session
 import { generateRandomString } from "@/utils/generate-random-string"; // We'll create this utility
 
 // In a real application, you would fetch client details from a database
 const authorizedClients = {
   "your-client-id": {
     name: "Your Client Application",
-    redirectUris: ["http://localhost:3001/callback"], // Replace with your client's actual redirect URI
+    redirectUris: ["http://localhost:3000"], // Replace with your client's actual redirect URI
   },
 };
 
