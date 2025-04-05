@@ -13,3 +13,11 @@ Going to use all the features within clerk, like using webhooks to connect to mo
 create a diagram for the folders and files in the Eraser document: <https://app.eraser.io/workspace/eetNFuVlXM44UbbRb8bC>. This shows the folders and files to be created.
 
 cleaned up page.js to remove everything and just created a plain `rfc` component.
+
+## Header creation
+
+adding header to layout.js file; which will adjust the layout for every page we create (the root layout). We want to create a header file and put it into the layout.js file.
+
+added an about page too.
+
+created the logo with gradients.
