@@ -117,7 +117,11 @@ sign in template code:
 import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
-  return <SignIn />;
+  return (
+    <div className="flex items-center justify-center p-3">
+      <SignIn />
+    </div>
+  );
 }
 ```
 
@@ -127,8 +131,18 @@ sign up:
 import { SignUp } from "@clerk/nextjs";
 
 export default function Page() {
-  return <SignUp />;
+  return (
+    <div className="flex items-center justify-center p-3">
+      <SignUp />
+    </div>
+  );
 }
 ```
 
-Both pages functioned properly at this point.
+Both pages functioned properly at this point; we added some tailwind classes to center the page content.
+
+We have some fields asked for for the sign up, but we don't have other fields that we could request, so we are going to change the settings for the users account to change this so that we gathered the user's first and last name. Went to Clerk > click on project > there's a dropdown with a gear > opens project settings > go to user authentication email, phone, username section > click slider for first and last name to be on.
+
+Then you can login with a valid email; verified this.
+
+## Updating header 
