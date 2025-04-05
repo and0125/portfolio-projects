@@ -145,4 +145,45 @@ We have some fields asked for for the sign up, but we don't have other fields th
 
 Then you can login with a valid email; verified this.
 
-## Updating header 
+## Updating Header
+
+We want to add the avatar to the header once the header is signed up.
+
+To do this we import some clerk components into the header, which can check if the user is logged in or out, and display a user button in the application.
+
+Updated header:
+
+```javascript
+<header className="bg-gradient-to-r from-blue-300 to-purple-400 shadow-lg">
+  {/* container */}
+  <div className="max-w-6xl mx-auto flex justify-between items-center p-3">
+    {/* logo */}
+    <Link href="/" className="text-2xl font-extrabold group cursor-pointer">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 drop-shadow-md group-hover:from-blue-400 group-hover:to-blue-600">
+        Auth
+      </span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-700 drop-shadow-md group-hover:from-purple-400 group-hover:to-purple-600">
+        App
+      </span>
+    </Link>
+    {/* navigation menu */}
+    <nav className="flex gap-4">
+      <Link href="/">Home</Link>
+      <Link href="/about">About</Link>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+    </nav>
+  </div>
+</header>
+```
+
+This enables us to connect several accounts to login, and you can sign out from the user avatar.
+
+This enables us to use clerk; but now we want to use a webhook to save the users information in our database. The user info is saved in clerk as well, but it's not in our database to be able to pull from it. So we need to connect our database to our users. So the webhook enables us to send the clerk data to our database.
+
+## Database Webhooks
+
