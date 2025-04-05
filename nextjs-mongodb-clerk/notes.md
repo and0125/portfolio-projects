@@ -22,7 +22,7 @@ added an about page too.
 
 created the logo with gradients, and used a group to group the hover behavior of the two words in the logo
 
-## Creating Pages with Clerk
+## Clerk Setup
 
 working on the sign in, sign up, and sign out functionality with Clerk.
 
@@ -106,3 +106,29 @@ export default function Loader() {
   );
 }
 ```
+
+### Clerk Pages
+
+Then we just use the code provided for the sign in and sign up pages by placing them in the routes specified.
+
+sign in template code:
+
+```javascript
+import { SignIn } from "@clerk/nextjs";
+
+export default function Page() {
+  return <SignIn />;
+}
+```
+
+sign up:
+
+```javascript
+import { SignUp } from "@clerk/nextjs";
+
+export default function Page() {
+  return <SignUp />;
+}
+```
+
+Both pages functioned properly at this point.
