@@ -32,3 +32,7 @@ Which means you'd need a mongodb client file to start this.
 ## MongoDB Client Info
 
 Switched an older to project to use with this project in mongodb. updated the connection variables to work with the older cluster.
+
+## Connecting MongoDB to Better Auth
+
+Note that the MongoDB adapter for better auth is not expecting a detailed sort of custom client class; its expecting a raw database object. So we no longer have wrapper functions, we have direct function exports for common operations. This should work with the authentication properly.
