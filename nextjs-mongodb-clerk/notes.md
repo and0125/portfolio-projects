@@ -187,3 +187,8 @@ This enables us to use clerk; but now we want to use a webhook to save the users
 
 ## Database Webhooks
 
+For doing this, we want to go to the clerk documenetaions and look at the sync data with webhooks article.
+
+This will be setup using `ngrok` which enables you to locally work with webhooks; which enables you to create a fake domain to do this. Or we could deploy to vercel and use this domain for adding the webhook.
+
+We did a detour to connect the application to vercel.
