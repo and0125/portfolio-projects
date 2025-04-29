@@ -22,7 +22,7 @@ app = FastAPI()
 
 """
 origins = [
-    "http://localhost:3000",  # React app port
+    "http://localhost:5173",  # React app port
 ]
 
 app.add_middleware(

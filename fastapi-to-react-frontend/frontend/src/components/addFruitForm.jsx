@@ -6,7 +6,7 @@ const AddFruitForm = ({ onAddFruit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (fruitName.trim()) {
-      addFruit(fruitName);
+      onAddFruit(fruitName); // Changed from addFruit to onAddFruit
       setFruitName("");
     }
   };
@@ -23,3 +23,5 @@ const AddFruitForm = ({ onAddFruit }) => {
     </form>
   );
 };
+
+export default AddFruitForm; // Added export statement

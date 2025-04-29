@@ -63,3 +63,10 @@ As a part of the setup, I needed to add a `components` folder as well, to ensure
 We also make an `api.js` file for storing the base url of the api.
 
 Created a simple Form component to enable the user to submit a fruit name to the API>
+
+
+---
+
+## hot wash
+
+Got to the end but the set wasn't working. Moving on to another thing as this is pretty much completed.

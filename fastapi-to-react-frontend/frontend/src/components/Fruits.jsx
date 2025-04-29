@@ -23,7 +23,22 @@ const FruitList = () => {
     }
   };
 
-    useEffect(() => {
-        fetchFruits();
-    }, []);
+  useEffect(() => {
+    fetchFruits();
+  }, []);
+
+  // Add the return statement here
+  return (
+    <div>
+      <h2>Fruits List</h2>
+      <AddFruitForm onAddFruit={addFruit} />
+      <ul>
+        {fruits.map((fruit, index) => (
+          <li key={index}>{fruit.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
+
+export default FruitList;
