@@ -46,4 +46,20 @@ Used the Postman VS code extension to test the GET and Post requests, and was ab
 
 we leave the API running, and created a new react project.
 
-He created a vite project.
+He created a vite project; but I just did a regular react project.
+
+**NOTE**: on running the react project, I realized there were a lot of vulnerabilities from the base react project, so I decided to do the vite installation. Vite doesn't have a react-native setup though.
+
+`npm create vite@latest ./ --template react`; then select `React` as the framework, and then select if you want the typescript, javascript, or remix variant (we go with javascript).
+
+This requires you to run `npm install` as the first command; so the installer doesn't do this for you.
+
+Once I ran that `npm install` though, the project was created without any errors.
+
+Also, we are able to add axios with `npm install axios`, and that didn't add any vulns.
+
+As a part of the setup, I needed to add a `components` folder as well, to ensure this existed.
+
+We also make an `api.js` file for storing the base url of the api.
+
+Created a simple Form component to enable the user to submit a fruit name to the API>
