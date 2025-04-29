@@ -33,3 +33,17 @@ we'll create a new fastAPI project, and a new react project.
 we create a new `main.py` file for our backend API.
 
 **NOTE**: fastAPI can automatically validate data going in and out of the API by defining pydantic models for your data. These model classes are at the top of this file.
+
+We created a basic API setup with FastAPI.
+
+and we can test this with the live server client in VSCode.
+
+We need to have a body to do a Post request.
+
+Used the Postman VS code extension to test the GET and Post requests, and was able to get this to work successfully with a restart of the API endpoint.
+
+## Frontend
+
+we leave the API running, and created a new react project.
+
+He created a vite project.

@@ -50,7 +50,7 @@ def get_fruits():
     return Fruits(fruits=memory_db["fruits"]) # automatically converts the list of fruits to the Fruits model and into JSON format
 
 
-@app.post(path="/fruits", response_model=Fruits)
+@app.post(path="/fruits", response_model=Fruit)
 def add_fruit(fruit: Fruit):
     """
     Add a new fruit to the mock database
