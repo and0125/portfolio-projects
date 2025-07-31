@@ -80,7 +80,7 @@ we need to add the secrets to the .env file after creating the app on Github.
 
 we create a new project for this on MongoDB Atlas.
 
-DB user: aarondantley; XP10Wt6dp02JPDyV -- this is for future use.
+DB user: aarondantley; -- this is for future use.
 
 Use the `Nodejs` package setup, not mongoose.
 
