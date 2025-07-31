@@ -61,3 +61,33 @@ Then we'll grab the pre-built schema models for MongodDB for session management.
 
 to do this, we generate the prisma instance with `npx prisma init`.
 
+## DB setup
+
+we created:
+
+- auth.ts to use our desired providers
+- added a the db.ts file to be separate from the auth.ts file
+- copying the mongodb schema to the schema.prisma file
+- adding user roles to the schema.prisma file
+
+There are properties in the schema that you may not use immediately, but can be helpful for secure sign in later; like for MFA.
+
+## Adding Github Variables
+
+we need to add the secrets to the .env file after creating the app on Github.
+
+## MongoDB
+
+we create a new project for this on MongoDB Atlas.
+
+DB user: aarondantley; XP10Wt6dp02JPDyV -- this is for future use.
+
+Use the `Nodejs` package setup, not mongoose.
+
+This requires installing the `mongodb` package. which we already have done.
+
+Then you add the url as the environment variable.
+
+**NOTE**: to query the desired database, we need to add the database name to the url: `mongodb+srv://aarondantley:XP10Wt6dp02JPDyV@cluster0.7y7x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority` wher `myFirstDatabase` is the name of the database.
+
+This ensures you are always querying the correct database.
