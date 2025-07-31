@@ -50,4 +50,14 @@ We'll add the provider information to this file. We leave it blank for now.
 
 ## /api/auth/[...nextauth]/route.ts
 
-we create a route handle in this folder.
+As a part of the next auth setup we:
+
+- added the auth.ts file
+- added the route.ts file in the api folder
+- added the db file in the app folder
+- added the database url to the .env file
+
+Then we'll grab the pre-built schema models for MongodDB for session management.
+
+to do this, we generate the prisma instance with `npx prisma init`.
+
