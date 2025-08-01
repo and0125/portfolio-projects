@@ -98,4 +98,77 @@ Then use `npx prisma db push` to push the collections to the database.
 
 **NOTE**: be sure to change the `datasource` provider to `mongodb` in the schema.prisma file before running the `prisma generate` and `prisma db push` commands.
 
-**NOTE**: pushing to the database goes through a firewall.
+**NOTE**: pushing to the database goes through a firewall, The push was successful from home, and created the database `nexauthyt` with the tables in the schema.prisma file.
+
+## Login with Github
+
+go to settings; note that the Oauth instructions in Authjs docs will show how to create this as well.
+
+on Github:
+
+- settings
+- developer settings
+- click on OAuth Apps
+- click on New OAuth App
+- Add a name
+- add `http://localhost:3000` as the origin url (this would be the url of the app for production)
+- add `http://localhost:3000/api/auth/callback/github` as the callback url (substitute the url of the app for production)
+- regiser the app
+- copy the client id into the .env file
+- generate a new client secret
+- coyp the client secret into the .env file
+
+_NOTE_: make sure `.env` is in the `.gitignore` file.
+
+## Adding Session
+
+Once the env variables are added, we added the session and SessionProvider to the layout.tsx file so that the session would be used in all routes of the app.
+
+WE also added a navbar component to the navbar.tsx file.
+
+### Troubleshooting
+
+**BIG NOTE**: we updated the `db.ts` file to use a different setup of declaring the global variable for the prisma client; this is more in line with the docs.
+
+```ts
+import { PrismaClient } from "@prisma/client";
+
+const globalForPrisma = global as unknown as { prisma: PrismaClient };
+
+export const db = globalForPrisma.prisma || new PrismaClient();
+
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = db;
+```
+
+However, I kept receiving this error:
+
+```error
+⨯ Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
+    at [project]/db.ts [app-rsc] (ecmascript) (db.ts:12:44)
+    at [project]/auth.ts [app-rsc] (ecmascript) (auth.ts:10:0)
+    at [project]/app/layout.tsx [app-rsc] (ecmascript) (app\layout.tsx:4:0)
+    at [project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component) (C:\Users\New User\Documents\PORTFOLIO\next-course\yt-course\.next\server\chunks\ssr\[root-of-the-server]__93bf7db5._.js:14:47)
+    at Object.<anonymous> (C:\Users\New User\Documents\PORTFOLIO\next-course\yt-course\.next\server\app\page.js:15:9)
+  10 | const globalForPrisma = global as unknown as { prisma: PrismaClient };
+  11 |
+> 12 | export const db = globalForPrisma.prisma || new PrismaClient();
+     |                                            ^
+  13 |
+  14 | if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = db;
+  15 | {
+  page: '/'
+}
+```
+
+Even though I ran `npx prisma generate` before running the app. So I updated the scripts in the package.json file to include the prisma generate command.
+
+```json
+"scripts": {
+    "dev": "prisma generate && next dev --turbopack",
+    "build": "prisma generate && next build",
+    "start": "prisma generate && next start",
+    "lint": "prisma generate && next lint"
+  },
+```
+
+This also did not fix the issue.
