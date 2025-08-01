@@ -200,3 +200,21 @@ I ran into this error:
 ```
 
 This problem occurred because I wasn't using the latest version of the `beta` version of next-auth; which I installed with `npm install next-auth@beta`. The instructor did this, but I didn't because I thought it was unstable.
+
+## Components
+
+Then we updated the navbar with links, and added a login button component to the project for logging in with Github.
+
+## Server Actions
+
+We add an action to handle some of the functionality of the buttons on the page in the `actions` folder.
+
+**NOTE**: this requires adding "use server" to the top of the file for the actions; and "use client" to the top of the file for the jsx components.
+
+## Additional Components / Logic
+
+We added components to the header to handle logging in and out for the user; and to display the user's name and image.
+
+Added the domain for the images to the next.config.ts file.
+
+updated api/auth/[...nextauth]/route.ts to use the handlers from the auth.ts file.

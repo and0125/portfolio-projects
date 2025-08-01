@@ -1,1 +1,2 @@
-export { GET, POST } from "auth.ts";
+import { handlers } from "@/auth";
+export const { GET, POST } = handlers;
