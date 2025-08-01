@@ -126,7 +126,7 @@ Once the env variables are added, we added the session and SessionProvider to th
 
 WE also added a navbar component to the navbar.tsx file.
 
-### Troubleshooting
+### Troubleshooting 1
 
 **BIG NOTE**: we updated the `db.ts` file to use a different setup of declaring the global variable for the prisma client; this is more in line with the docs.
 
@@ -172,3 +172,31 @@ Even though I ran `npx prisma generate` before running the app. So I updated the
 ```
 
 This also did not fix the issue.
+
+So I ended up deleting:
+
+- the prisma folder
+- the generated folder
+- the node_modules folder
+
+Then I ran `npm install`, `npx prisma init`, and `npx prisma generate` again. This deletion did fix the issue, but pointed out another issue.
+
+### Troubleshooting 2
+
+I ran into this error:
+
+```error
+⨯ TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$auth$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__.auth) is not a function
+    at RootLayout (app\layout.tsx:28:27)
+  26 |   children: React.ReactNode;
+  27 | }>) {
+> 28 |   const session = await auth();
+     |                           ^
+  29 |   return (
+  30 |     <SessionProvider session={session}>
+  31 |       <html lang="en"> {
+  digest: '3495412043'
+}
+```
+
+This problem occurred because I wasn't using the latest version of the `beta` version of next-auth; which I installed with `npm install next-auth@beta`. The instructor did this, but I didn't because I thought it was unstable.
