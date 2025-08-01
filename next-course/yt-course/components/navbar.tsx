@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { auth } from "@/auth";
 import Image from "next/image";
+import LogoutBtn from "@/components/logout-btn";
 
 export default async function Navbar() {
   const session = await auth();
@@ -37,21 +38,20 @@ export default async function Navbar() {
             </Link>
           ) : (
             // Logged in view
-            <div>
-              {session?.user?.name && session?.user?.image && (
-                <Image
-                  className="rounded-full"
-                  width={30}
-                  height={30}
-                  src={session?.user?.image || ""}
-                  alt={`${session?.user?.name}'s avatar`}
-                />
-              )}
-              <Link href="/sign-in" className="font-bold">
-                <div className="bg-blue-600 text-white text-sm px-4 py-2 rounded-sm">
-                  Logout
-                </div>
-              </Link>
+            <div className="flex gap-x-5 items-center">
+              <div className="flex items-center gap-x-2 text-sm">
+                {session?.user?.name}
+                {session?.user?.image && (
+                  <Image
+                    src={session?.user?.image}
+                    alt={session?.user?.name || ""}
+                    width={30}
+                    height={30}
+                    className="rounded-full"
+                  />
+                )}
+              </div>
+              <LogoutBtn />
             </div>
           )}
         </div>
