@@ -19,10 +19,10 @@ export default async function Navbar() {
 
         {/* Links */}
         <div className="flex items-center gap-x-5 my-4 ">
-          <Link href="/" className="font-bold">
+          <Link href="/middleware" className="font-bold">
             Middleware
           </Link>
-          <Link href="/" className="font-bold">
+          <Link href="/server" className="font-bold">
             Server
           </Link>
         </div>

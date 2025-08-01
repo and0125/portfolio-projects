@@ -218,3 +218,11 @@ We added components to the header to handle logging in and out for the user; and
 Added the domain for the images to the next.config.ts file.
 
 updated api/auth/[...nextauth]/route.ts to use the handlers from the auth.ts file.
+
+Finally got the login logout to work!! if you check Mongodb Atlas, you can see the user is logged in. These models are the global login info; and require additional information for the session information.
+
+---
+
+## Protecting Routes
+
+We used two different methods to protect routes; one with middleware, and one with a function to check the session (which could be considered a server action).
