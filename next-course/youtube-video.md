@@ -232,3 +232,6 @@ We created the `middleware.ts` file to protect the routes; which includes a matc
 So the `server` protection is protected through validating a particular property of the user's data isis not present in the session object.
 
 The `middleware` protection is protected through checking if the user has the specific permissions to view the page based on the user info in the session object.
+
+## API routes 
+
