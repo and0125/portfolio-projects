@@ -226,3 +226,9 @@ Finally got the login logout to work!! if you check Mongodb Atlas, you can see t
 ## Protecting Routes
 
 We used two different methods to protect routes; one with middleware, and one with a function to check the session (which could be considered a server action).
+
+We created the `middleware.ts` file to protect the routes; which includes a matcher from the documentation.
+
+So the `server` protection is protected through validating a particular property of the user's data isis not present in the session object.
+
+The `middleware` protection is protected through checking if the user has the specific permissions to view the page based on the user info in the session object.

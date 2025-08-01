@@ -1,16 +1,17 @@
 import { auth } from "@/auth";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 const protectedRoutes = ["/middleware"];
 
 export default async function middleware(request: NextRequest) {
   const session = await auth();
 
-  const isProtectedRoute = protectedRoutes.some((route) =>
+  const isProtected = protectedRoutes.some((route) =>
     request.nextUrl.pathname.startsWith(route)
   );
 
-  if (!session || !isProtectedRoute) {
+  if (!session && isProtected) {
     const absoluteUrl = new URL("/", request.nextUrl.origin);
     return NextResponse.redirect(absoluteUrl.toString());
   }
@@ -19,5 +20,5 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/middleware/:path*"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
